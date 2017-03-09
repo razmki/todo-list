@@ -1,0 +1,54 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body > * {
+    height: 100%;
+}
+h2 {
+    font-family: 'Open Sans';
+    color: white;
+    border-bottom: 1px solid white;
+    margin: 0 8px;
+}
+h3 {
+    font-size: 22px;
+}
+md-button {
+    background-color: #80CBC4 !important;
+}
+h3, .md-subhead {
+    font-family: 'Roboto';
+    font-weight: 500;
+}
+md-card {
+    padding: 8px;
+    
+}
+md-checkbox {
+}
+md-checkbox.md-checked.green .md-icon {
+ background-color: #EF5350;
+}
+body {
+    background-color: #607D8B;
+}
+.todo {
+    overflow-y: scroll;
+    height: 100%;
+}
+.line-clamp {
+    height: 4.8em;
+    line-height: 1.2em;
+    overflow: hidden;
+}
+::-webkit-scrollbar {
+    width: 7px;
+}
+::-webkit-scrollbar-thumb{
+    border-radius: 4px;
+    background-color: #eee;
+}
+::-webkit-scrollbar-thumb:hover{
+    background-color: #888;
+}
