@@ -10,6 +10,10 @@
         
         <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.4.2/angular-ui-router.min.js"></script>
+        <script src="app.module.js"></script>
+        <script src="add-new-task/add-new-task.module.js"></script>
+        <script src="add-new-task/add-new-task.component.js"></script>
+        
     </head>
     <body>
         
@@ -18,14 +22,20 @@
     <div flex="25">
     <div class="todo">
         <h2>To Do</h2>
+
+        <add-new-task></add-new-task>
+        
         <md-card md-theme="default" md-theme-watch flex>
-            <h3>Card with image</h3>
-            <span class="md-subhead line-clamp">gfdkjsgh sdfhgjk sdjgh fdjksgh skjfgh fjks sjdghkjdfsh gksdfhg ksdhg kfsdhdkgh dfkghdf skjkjkg hskdj hjksdh ghds skdfhskjhks gshhhhhhskj kjdg kjsh kjdfhs kksjgh hjskghj</span>
+            <div layout='row'>
+              <h3 flex='92'>Card with image Card with image Card with image</h3>
+              <i class="material-icons" flex="8">close</i>
+            </div>
+            <span class="md-subhead line-clamp">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt voluptatibus officia nisi soluta nostrum voluptates suscipit vitae quos iure repellendus dolore minus doloribus debitis libero deleniti tempora impedit, quis iusto.</span>
             <i class="material-icons">more_horiz</i>
             <md-checkbox class="green" ng-model="data.cb1" aria-label="Checkbox 1">
             Important!
           </md-checkbox>
-          <md-button md-colors="{background: 'blue-grey-200'}" flex="20">Action 1</md-button>
+          <md-button md-colors="{background: 'blue-grey-200'}">Edit</md-button>
       </md-card>
       <md-card md-theme="default" md-theme-watch flex>
             <h3>Card with image</h3>
@@ -90,6 +100,5 @@
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-messages.min.js"></script>
 
     <script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.js"></script>
-    <script src="app.js"></script>
     <link rel="stylesheet" href="style.css">
 </html>

@@ -1,1 +1,1 @@
-var app = angular.module('todoList', ['ngMaterial']);
+var app = angular.module('todoList', ['ngMaterial', 'addNewTask']);

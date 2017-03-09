@@ -14,8 +14,8 @@ h2 {
 h3 {
     font-size: 22px;
 }
-md-button {
-    background-color: #80CBC4 !important;
+i {
+    vertical-align: middle;
 }
 h3, .md-subhead {
     font-family: 'Roboto';
@@ -25,7 +25,11 @@ md-card {
     padding: 8px;
     
 }
+md-button {
+    padding-top: 3px !important;
+}
 md-checkbox {
+    margin-bottom: 8px;
 }
 md-checkbox.md-checked.green .md-icon {
  background-color: #EF5350;
@@ -37,11 +41,23 @@ body {
     overflow-y: scroll;
     height: 100%;
 }
+md-content {
+    padding: 8px;
+    margin: 8px;
+}
+md-input-container label, 
+md-input-container .md-placeholder{
+    color: black !important;
+}
+md-input-container:not(.md-input-invalid).md-input-focused .md-input {
+    border-color: black;
+}
 .line-clamp {
     height: 4.8em;
     line-height: 1.2em;
     overflow: hidden;
 }
+
 ::-webkit-scrollbar {
     width: 7px;
 }

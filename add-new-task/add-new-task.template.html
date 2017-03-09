@@ -1,0 +1,20 @@
+<div layout="row" layout-align="center center">
+          <md-button class="md-raised"><i class="material-icons">add</i>Add new task</md-button>
+        </div>
+        <md-content flex>
+          <md-input-container class="md-block" flex-gt-sm>
+              <label>Name:</label>
+              <input md-maxlength="30" required ng-model="$ctrl.newTask.name">
+          </md-input-container>
+
+          <md-input-container class="md-block">
+            <label>Description:</label>
+            <textarea ng-model="$ctrl.newTask.description" md-maxlength="150" rows="5" md-select-on-focus></textarea>
+          </md-input-container>
+          <md-checkbox class="green" ng-model="$ctrl.newTask.important" aria-label="Checkbox 1">
+          Important!
+          </md-checkbox>
+          <div layout="row" layout-align="center center">
+            <md-button md-colors="{background: 'blue-grey-200'}" class="md-raised" ng-click='$ctrl.addTask()'>Add</md-button>
+          </div>
+        </md-content>
