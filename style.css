@@ -2,53 +2,63 @@
     margin: 0;
     padding: 0;
 }
+
 body > * {
     height: 100%;
 }
+
 h2 {
     font-family: 'Open Sans';
     color: white;
     border-bottom: 1px solid white;
     margin: 0 8px;
 }
+
 h3 {
     font-size: 22px;
 }
+
 i {
     vertical-align: middle;
 }
-h3, .md-subhead {
+
+h3,
+.md-subhead {
     font-family: 'Roboto';
     font-weight: 500;
 }
+
 md-card {
-    padding: 8px;  
+    padding: 8px;
 }
+
 md-checkbox.md-checked.green .md-icon {
- background-color: #EF5350;
+    background-color: #EF5350;
 }
+
 body {
     background-color: #607D8B;
 }
+
 .todo {
     overflow-y: scroll;
     max-height: 100%;
 }
-.column-without-prebutton {
-    overflow-y: scroll;
-    max-height: 100%;
-}
+
 md-content {
     padding: 8px;
     margin: 8px;
 }
-md-input-container label, 
-md-input-container .md-placeholder{
+
+md-input-container label,
+md-input-container .md-placeholder {
     color: black !important;
 }
+
 text-area {
     height: 30px !important;
 }
+
 md-input-container:not(.md-input-invalid).md-input-focused .md-input {
     border-color: black;
 }
@@ -59,32 +69,55 @@ md-input-container:not(.md-input-invalid).md-input-focused .md-input {
     overflow: hidden;
     display: block;
 }
+
 span {
     line-height: 1.2em;
 }
+
 i {
     outline: 0;
     cursor: pointer;
 }
+
 ::-webkit-scrollbar {
     width: 7px;
 }
-::-webkit-scrollbar-thumb{
+
+::-webkit-scrollbar-thumb {
     border-radius: 4px;
     background-color: #eee;
 }
-::-webkit-scrollbar-thumb:hover{
+
+::-webkit-scrollbar-thumb:hover {
     background-color: #888;
 }
+
 .sample-show-hide {
-  transition: all linear 0.5s;
+    transition: all linear 0.5s;
 }
+
 .sample-show-hide.ng-hide {
-  opacity: 0;
+    opacity: 0;
 }
+
 .important {
     border-left: 5px solid #F44336;
 }
+
 .col-without-button {
-    margin-bottom: 56px;
+    margin-bottom: 48px;
+}
+
+.column-of-tasks {
+    height: 800px;
+    /* 100%sdelat po roditelu*/
+    cursor: pointer;
+}
+
+div[dnd-list] .dndPlaceholder {
+    border: 2px dashed white;
+    display: block;
+    min-height: 150px;
+    max-width: 95%;
+    margin-left: 2.5%;
 }

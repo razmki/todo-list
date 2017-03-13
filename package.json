@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "angular-drag-and-drop-lists": "^2.1.0",
     "body-parser": "^1.17.1",
     "express": "^4.15.2",
     "mongojs": "^2.4.0"

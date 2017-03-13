@@ -1,3 +1,11 @@
-<md-card md-theme="default" md-theme-watch flex ng-repeat="todo in $ctrl.columnData" ng-class="{important: todo.important}">
+<div class="column-of-tasks" dnd-list="$ctrl.columnData
+">
+<md-card md-theme="default" md-theme-watch flex ng-repeat="todo in $ctrl.columnData" ng-class="{important: todo.important} "  dnd-draggable="todo"
+        dnd-moved="$ctrl.changeTaskColumn($ctrl.columnData, $index)"
+        dnd-effect-allowed="move"
+        dnd-selected="models.selected = todo"
+        ng-class="{'selected': models.selected === todo}"
+        >
     <tasks todo='todo' refresh='$ctrl.refresh' name-column="$ctrl.nameColumn"></tasks>
 </md-card>
+</div>

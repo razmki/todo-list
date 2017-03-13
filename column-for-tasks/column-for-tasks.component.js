@@ -9,8 +9,11 @@ angular.
     },
     controller:
       function ColumnForTasksController($http) {
-        // setTimeout(function() {
-        //   console.log(this)
-        // })
+        // this.changeTaskColumn = function(data, index) {
+        //   this.columnData.splice(index, 1);
+        //   $http.put('/changetaskcolumn', this.columnData).then(function(response) {
+        //     console.log('success');
+        //   })
+        // }
       }
   });

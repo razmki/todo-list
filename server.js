@@ -8,30 +8,47 @@ app.use(express.static(__dirname));
 app.use(bodyParser.json());
 
 app.get('/addnew', function(req, res) {
-    db.tasklist.find(function (err, docs) {
-        res.json(docs); 
+    db.tasklist.find(function(err, docs) {
+        res.json(docs);
     });
 });
-app.post('/addnew', function (req, res) {
+app.post('/addnew', function(req, res) {
     db.tasklist.todo.insert(req.body, function(err, doc) {
         res.json(doc);
     });
 });
+app.put('/changetaskcolumn', function(req, res) {
+	console.log(req.params);
+    db.tasklist.update({ name: req.params['0']}, {
+        $set: {
+            'tasks': req.params['1']
+        }
+    }, function(err, doc) {
+        res.send(doc);
+    });
+});
+db.users.update({ name: "Eugene", age: 29 }, { $set: { age: 30 } })
 app.put('/addnew', function(req, res) {
-	console.log(req.body);
-	db.tasklist.update({name : "To Do"}, {$push: {'tasks': req.body}}, function (err, doc) {
-			res.send(doc);
-	});
-		// db.tasklist.update({name : "In Progress"}, {$set: {'In Progress.-1': 'name': 'inprogresstest', 'description': '123123123', 'important': true}})
+    console.log(req.body);
+    db.tasklist.update({ name: "In Progress" }, {
+        $push: {
+            'tasks': {
+                $each: [req.body],
+                $position: 0
+            }
+        }
+    }, function(err, doc) {
+        res.send(doc);
+    });
 });
 app.delete('/addnew/:name/:nameColumn', function(req, res) {
-        var deleteName = req.params.name;
-        var columnName = req.params.nameColumn;
-        console.log(deleteName);
-        db.tasklist.update({name : columnName}, {$pull: {tasks: {'name': deleteName}}}, function (err, doc) {
-            res.send(doc);
-        });
-        });
+    var deleteName = req.params.name;
+    var columnName = req.params.nameColumn;
+    console.log(deleteName);
+    db.tasklist.update({ name: columnName }, { $pull: { tasks: { 'name': deleteName } } }, function(err, doc) {
+        res.send(doc);
+    });
+});
 app.listen(3000);
 // app.delete('/contactlist/:id', function(req, res) {
 // 	var id = req.params.id;
