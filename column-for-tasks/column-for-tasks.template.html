@@ -1,0 +1,3 @@
+<md-card md-theme="default" md-theme-watch flex ng-repeat="todo in $ctrl.columnData" ng-class="{important: todo.important}">
+    <tasks todo='todo' refresh='$ctrl.refresh' name-column="$ctrl.nameColumn"></tasks>
+</md-card>

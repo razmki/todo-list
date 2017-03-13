@@ -1,20 +1,22 @@
-<div layout="row" layout-align="center center">
-          <md-button class="md-raised"><i class="material-icons">add</i>Add new task</md-button>
+        <div layout="row" layout-align="center center">
+          <md-button class="md-raised" ng-click="$ctrl.activated = $ctrl.activated ? 0 : 1"><i class="material-icons">add</i>Add new task</md-button>
         </div>
-        <md-content flex>
+        <form name="$ctrl.addNewForm">
+        <md-content flex ng-show="$ctrl.activated">
           <md-input-container class="md-block" flex-gt-sm>
               <label>Name:</label>
-              <input md-maxlength="30" required ng-model="$ctrl.newTask.name">
+              <input required ng-model="$ctrl.newTask.name">
           </md-input-container>
 
-          <md-input-container class="md-block">
+          <md-input-container class="md-block" flex-gt-sm>
             <label>Description:</label>
-            <textarea ng-model="$ctrl.newTask.description" md-maxlength="150" rows="5" md-select-on-focus></textarea>
+            <textarea ng-model="$ctrl.newTask.description" rows="1" style="height: 30px;"></textarea>
           </md-input-container>
           <md-checkbox class="green" ng-model="$ctrl.newTask.important" aria-label="Checkbox 1">
           Important!
           </md-checkbox>
           <div layout="row" layout-align="center center">
-            <md-button md-colors="{background: 'blue-grey-200'}" class="md-raised" ng-click='$ctrl.addTask()'>Add</md-button>
+            <md-button md-colors="{background: 'blue-grey-200'}" class="md-raised" ng-click="$ctrl.addTask()">Add</md-button>
           </div>
         </md-content>
+        </form>

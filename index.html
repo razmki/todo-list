@@ -2,103 +2,29 @@
 <html lang="en" ng-app='todoList'>
     <head>
         <meta charset="UTF-8">
-        <title>Document</title>
-        <!-- #d7e1e3 -->
+        <title>Todo list app</title>
+        <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:300|Roboto" rel="stylesheet">
         <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.css">
-        
         <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.4.2/angular-ui-router.min.js"></script>
         <script src="app.module.js"></script>
         <script src="add-new-task/add-new-task.module.js"></script>
         <script src="add-new-task/add-new-task.component.js"></script>
-        
+        <script src="tasks/tasks.module.js"></script>
+        <script src="tasks/tasks.component.js"></script>
+        <script src="column-for-tasks/column-for-tasks.module.js"></script>
+        <script src="column-for-tasks/column-for-tasks.component.js"></script>
+        <script src="columns-of-states/columns-of-states.module.js"></script>
+        <script src="columns-of-states/columns-of-states.component.js"></script>
     </head>
     <body>
-        
-  <div layout="row" class=todo-list>
-
-    <div flex="25">
-    <div class="todo">
-        <h2>To Do</h2>
-
-        <add-new-task></add-new-task>
-        
-        <md-card md-theme="default" md-theme-watch flex>
-            <div layout='row'>
-              <h3 flex='92'>Card with image Card with image Card with image</h3>
-              <i class="material-icons" flex="8">close</i>
-            </div>
-            <span class="md-subhead line-clamp">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt voluptatibus officia nisi soluta nostrum voluptates suscipit vitae quos iure repellendus dolore minus doloribus debitis libero deleniti tempora impedit, quis iusto.</span>
-            <i class="material-icons">more_horiz</i>
-            <md-checkbox class="green" ng-model="data.cb1" aria-label="Checkbox 1">
-            Important!
-          </md-checkbox>
-          <md-button md-colors="{background: 'blue-grey-200'}">Edit</md-button>
-      </md-card>
-      <md-card md-theme="default" md-theme-watch flex>
-            <h3>Card with image</h3>
-            <span class="md-subhead line-clamp">gfdkjsgh sdfhgjk sdjgh fdjksgh skjfgh fjks sjdghkjdfsh gksdfhg ksdhg kfsdhdkgh dfkghdf skjkjkg hskdj hjksdh ghds skdfhskjhks gshhhhhhskj kjdg kjsh kjdfhs kksjgh hjskghj</span>
-          <md-button>Action 1</md-button>
-          <md-button>Action 2</md-button>
-      </md-card>
-      <md-card md-theme="default" md-theme-watch flex>
-            <h3>Card with image</h3>
-            <span class="md-subhead line-clamp">gfdkjsgh sdfhgjk sdjgh fdjksgh skjfgh fjks sjdghkjdfsh gksdfhg ksdhg kfsdhdkgh dfkghdf skjkjkg hskdj hjksdh ghds skdfhskjhks gshhhhhhskj kjdg kjsh kjdfhs kksjgh hjskghj</span>
-          <md-button>Action 1</md-button>
-          <md-button>Action 2</md-button>
-      </md-card>
-      <md-card md-theme="default" md-theme-watch flex>
-            <h3>Card with image</h3>
-            <span class="md-subhead line-clamp">gfdkjsgh sdfhgjk sdjgh fdjksgh skjfgh fjks sjdghkjdfsh gksdfhg ksdhg kfsdhdkgh dfkghdf skjkjkg hskdj hjksdh ghds skdfhskjhks gshhhhhhskj kjdg kjsh kjdfhs kksjgh hjskghj</span>
-          <md-button>Action 1</md-button>
-          <md-button>Action 2</md-button>
-      </md-card>
-    </div></div>
-    <div flex="25"><md-card md-theme="default" md-theme-watch flex=''>
-        <md-card-title>
-          <md-card-title-text>
-            <span class="md-headline">Card with image</span>
-            <span class="md-subhead">Small</span>
-          </md-card-title-text>
-        </md-card-title>
-        <md-card-actions layout="row" layout-align="end center">
-          <md-button>Action 1</md-button>
-          <md-button>Action 2</md-button>
-        </md-card-actions>
-      </md-card></div>
-    <div flex="25"><md-card md-theme="default" md-theme-watch flex=''>
-        <md-card-title>
-          <md-card-title-text>
-            <span class="md-headline">Card with image</span>
-            <span class="md-subhead">Small</span>
-          </md-card-title-text>
-        </md-card-title>
-        <md-card-actions layout="row" layout-align="end center">
-          <md-button>Action 1</md-button>
-          <md-button>Action 2</md-button>
-        </md-card-actions>
-      </md-card></div>
-    <div flex="25"><md-card md-theme="default" md-theme-watch flex=''>
-        <md-card-title>
-          <md-card-title-text>
-            <span class="md-headline">Card with image</span>
-            <span class="md-subhead">Small</span>
-          </md-card-title-text>
-        </md-card-title>
-        <md-card-actions layout="row" layout-align="end center">
-          <md-button>Action 1</md-button>
-          <md-button>Action 2</md-button>
-        </md-card-actions>
-      </md-card></div>
-
-  </div>
+        <columns-of-states layout="row"></columns-of-states>
     </body>
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.min.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-aria.min.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-messages.min.js"></script>
-
     <script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.js"></script>
     <link rel="stylesheet" href="style.css">
 </html>

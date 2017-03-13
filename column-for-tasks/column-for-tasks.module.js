@@ -1,0 +1,1 @@
+angular.module('columnForTasks', ['addNewTask', 'tasks']);

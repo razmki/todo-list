@@ -22,14 +22,7 @@ h3, .md-subhead {
     font-weight: 500;
 }
 md-card {
-    padding: 8px;
-    
-}
-md-button {
-    padding-top: 3px !important;
-}
-md-checkbox {
-    margin-bottom: 8px;
+    padding: 8px;  
 }
 md-checkbox.md-checked.green .md-icon {
  background-color: #EF5350;
@@ -39,7 +32,11 @@ body {
 }
 .todo {
     overflow-y: scroll;
-    height: 100%;
+    max-height: 100%;
+}
+.column-without-prebutton {
+    overflow-y: scroll;
+    max-height: 100%;
 }
 md-content {
     padding: 8px;
@@ -49,15 +46,26 @@ md-input-container label,
 md-input-container .md-placeholder{
     color: black !important;
 }
+text-area {
+    height: 30px !important;
+}
 md-input-container:not(.md-input-invalid).md-input-focused .md-input {
     border-color: black;
 }
-.line-clamp {
-    height: 4.8em;
-    line-height: 1.2em;
-    overflow: hidden;
-}
 
+.line-clamp {
+    line-height: 1.2em;
+    height: 4.8em;
+    overflow: hidden;
+    display: block;
+}
+span {
+    line-height: 1.2em;
+}
+i {
+    outline: 0;
+    cursor: pointer;
+}
 ::-webkit-scrollbar {
     width: 7px;
 }
@@ -67,4 +75,16 @@ md-input-container:not(.md-input-invalid).md-input-focused .md-input {
 }
 ::-webkit-scrollbar-thumb:hover{
     background-color: #888;
+}
+.sample-show-hide {
+  transition: all linear 0.5s;
+}
+.sample-show-hide.ng-hide {
+  opacity: 0;
+}
+.important {
+    border-left: 5px solid #F44336;
+}
+.col-without-button {
+    margin-bottom: 56px;
 }
