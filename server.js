@@ -17,17 +17,16 @@ app.post('/addnew', function(req, res) {
         res.json(doc);
     });
 });
-app.put('/changetaskcolumn', function(req, res) {
-	console.log(req.params);
-    db.tasklist.update({ name: req.params['0']}, {
+app.put('/changetaskcolumn/:column', function(req, res) {
+    db.tasklist.update({ name: req.params.column}, {
         $set: {
-            'tasks': req.params['1']
+            'tasks': req.body
         }
     }, function(err, doc) {
         res.send(doc);
     });
 });
-db.users.update({ name: "Eugene", age: 29 }, { $set: { age: 30 } })
+// db.users.update({ name: "Eugene", age: 29 }, { $set: { age: 30 } })
 app.put('/addnew', function(req, res) {
     console.log(req.body);
     db.tasklist.update({ name: "In Progress" }, {

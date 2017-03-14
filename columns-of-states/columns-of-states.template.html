@@ -2,6 +2,6 @@
 	<h2 ng-class="{'col-without-button': col.name !== 'To Do'}">{{col.name}}</h2>
     <div ng-class="{todo: col.name}">
         <add-new-task refresh="$ctrl.refresh" ng-if="col.name === 'To Do'"></add-new-task>
-        	<column-for-tasks column-data="col.tasks" name-column="col.name" refresh="$ctrl.refresh" ></column-for-tasks>
+        <column-for-tasks  all-columns="$ctrl.columns" column-data="col.tasks" name-column="col.name" refresh="$ctrl.refresh" ></column-for-tasks>
     </div>
 </div>

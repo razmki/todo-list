@@ -3,17 +3,24 @@ angular.
   component('columnForTasks', {
     templateUrl: 'column-for-tasks/column-for-tasks.template.html',
     bindings: {
-      columnData: '=',
+      columnData: '<',
       refresh: '<',
-      nameColumn: '<'
+      nameColumn: '<',
+      allColumns: '='
     },
     controller:
       function ColumnForTasksController($http) {
-        // this.changeTaskColumn = function(data, index) {
-        //   this.columnData.splice(index, 1);
-        //   $http.put('/changetaskcolumn', this.columnData).then(function(response) {
-        //     console.log('success');
-        //   })
-        // }
-      }
-  });
+        var self = this;
+        this.$onInit = function() {
+          console.log(42);
+        }
+        this.$onChanges = function({this.columnData}) {
+          console.log('index', this.$index)
+          this.columnData.splice(this.$index, 1);
+          console.log(this.columnData);
+          $http.put('/changetaskcolumn/' + this.nameColumn, this.columnData).then(function(response) {
+            console.log('success');
+        });
+      };
+  }
+});
