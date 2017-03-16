@@ -42,7 +42,8 @@ body {
 
 .todo {
     overflow-y: scroll;
-    max-height: 100%;
+    min-height: 80%;
+    max-height: 90%;
 }
 
 md-content {
@@ -108,8 +109,13 @@ i {
     margin-bottom: 48px;
 }
 
+column-for-tasks {
+    display: block;
+    min-height: 100%;
+}
+
 .column-of-tasks {
-    height: 800px;
+    min-height: 168px;
     /* 100%sdelat po roditelu*/
     cursor: pointer;
 }

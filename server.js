@@ -18,18 +18,21 @@ app.post('/addnew', function(req, res) {
     });
 });
 app.put('/changetaskcolumn/:column', function(req, res) {
-    db.tasklist.update({ name: req.params.column}, {
-        $set: {
-            'tasks': req.body
-        }
-    }, function(err, doc) {
-        res.send(doc);
-    });
+    console.log(req.params.column);
+    console.log(req.body);
+    for (var i = 0; i < req.body.length; i++) {
+        console.log('111111', req.body[i].name);
+        console.log("arrayTasks", req.body[i].tasks)
+        db.tasklist.update({ name: req.body[i].name }, {
+            $set: {
+                'tasks': req.body[i].tasks
+            }
+        }, function(err, doc) {});
+    }
 });
-// db.users.update({ name: "Eugene", age: 29 }, { $set: { age: 30 } })
 app.put('/addnew', function(req, res) {
     console.log(req.body);
-    db.tasklist.update({ name: "In Progress" }, {
+    db.tasklist.update({ name: "To Do" }, {
         $push: {
             'tasks': {
                 $each: [req.body],
@@ -49,29 +52,3 @@ app.delete('/addnew/:name/:nameColumn', function(req, res) {
     });
 });
 app.listen(3000);
-// app.delete('/contactlist/:id', function(req, res) {
-// 	var id = req.params.id;
-// 	console.log(id);
-// 	db.contactlist.remove({ _id: mongojs.ObjectId(id)}, function(err, doc) {
-// 		res.json(doc);
-// 	});
-// });
-
-// app.get('/contactlist/:id', function(req, res) {
-//     db.contactlist.findOne({ _id : mongojs.ObjectId(req.params.id)}, function (err, doc) {
-//         res.json(doc);
-//     });
-// });
-
-// app.put('/contactlist/:id', function(req, res) {
-// 	var id = req.params.id;
-// 	console.log(req.body.name);
-// 	db.contactlist.findAndModify({query: {_id: mongojs.ObjectId(id)},
-// 		update: {$set: {name: req.body.name, email: req.body.email, number: req.body.number}},
-// 		new: true},
-// 		function (err, doc) {
-// 			res.json(doc);
-// 		});
-
-// })
-// app.listen(3000);
