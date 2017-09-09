@@ -51,4 +51,9 @@ app.delete('/addnew/:name/:nameColumn', function(req, res) {
         res.send(doc);
     });
 });
+app.post('/sendEmail', function(req, res) {
+    db.tasklist.todo.insert(req.body, function(err, doc) {
+        res.json(doc);
+    });
+});
 app.listen(3000);
